@@ -4,7 +4,7 @@ from PIL import Image
 ASCII_CHARS = ["@", "#","S","%","$","%","?","*","+",";",":",",","."]
 
 def resize_image(image, new_width=100):
-    width, height = image.size()
+    width, height = image.size
     ratio = height / width
     new_height = int(new_width * ratio)
     resized_image = image.resize((new_width, new_height))
@@ -17,7 +17,7 @@ def grayify(image):
 
 def pixel_to_ascii(image):
   pixels = image.getdata()
-  charaters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
+  charaters = " ".join([ASCII_CHARS[pixel//25] for pixel in pixels])
   return(charaters)
 
 
